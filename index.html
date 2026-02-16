@@ -1,279 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Love Lock-in Celebration</title>
-    <style>
-      :root {
-        --pink: #ff4f8b;
-        --gold: #ffd166;
-        --deep: #29143d;
-        --panel: rgba(24, 14, 38, 0.72);
-        --text: #fff4fb;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: var(--text);
-        background: radial-gradient(circle at top, #4a1f6d 0%, #14081f 48%, #07040d 100%);
-        overflow-x: hidden;
-      }
-
-      .glow {
-        position: fixed;
-        width: 42vmax;
-        height: 42vmax;
-        border-radius: 50%;
-        filter: blur(50px);
-        opacity: 0.35;
-        pointer-events: none;
-        z-index: 0;
-      }
-
-      .glow.one {
-        top: -10vmax;
-        left: -14vmax;
-        background: #f857a6;
-      }
-
-      .glow.two {
-        right: -16vmax;
-        bottom: -12vmax;
-        background: #4facfe;
-      }
-
-      .container {
-        position: relative;
-        z-index: 1;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 2.2rem 1.2rem 3rem;
-      }
-
-      .hero {
-        text-align: center;
-        background: var(--panel);
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        border-radius: 22px;
-        padding: 2rem 1.2rem;
-        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
-        backdrop-filter: blur(8px);
-      }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        letter-spacing: 0.1rem;
-        text-transform: uppercase;
-      }
-
-      .subtitle {
-        margin: 0.8rem auto 1.3rem;
-        max-width: 670px;
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
-        color: #ffe6f4;
-      }
-
-      .pill {
+<html lang="en" style="font-size: 159.467px;"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,shrink-to-fit=no,viewport-fit=cover"> <meta content="yes" name="apple-mobile-web-app-capable"> <meta content="black" name="apple-mobile-web-app-status-bar-style"> <meta content="telephone=no" name="format-detection"> <meta content="email=no" name="format-detection"> <meta property="og:url" content="https://m.starmakerstudios.com/a/spa-dreamWorks/index?promotion_id=37838&amp;showBar=1&amp;showNavigation=true&amp;title=SENTERNET_BOSS&amp;new=false&amp;isStatusBarStyle=false&amp;sp=game_center&amp;game_id=1&amp;lang=TA&amp;region=us&amp;theme=dark%22%3EDreamWorks"> <meta property="fb:app_id" content="213560439114"> <meta property="og:type" content="website"> <meta property="og:image:width" content="200"> <meta property="og:image:height" content="200"> <meta name="twitter:card" content="summary"> <meta content="description"> <meta name="apple-mobile-web-app-capable" content="yes">  <meta property="og:title" content=""> <meta property="og:description" content=""> <meta property="og:image" itemprop="image" content=""> <meta name="twitter:title" content=""> <meta name="twitter:description" content=""> <meta name="twitter:image" content="">  <title>Crazy Monster</title>         <style media="screen"> html{
+    }
+    .app-wrapper {
+      width:100%;
+      overflow: hidden;
+    }
+    .show{
+      display: flex;
+    }
+    .hide{
+      display:none !important;
+    }
+    .loading-icon {
+      position: fixed;
+      max-width: 640px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1000;
+      transition: opacity .2s linear;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      margin: 0 auto;}
+      .loading-icon i {
+        margin: 0 2px;
         display: inline-block;
-        padding: 0.35rem 0.8rem;
-        border-radius: 999px;
-        background: rgba(255, 209, 102, 0.2);
-        border: 1px solid rgba(255, 209, 102, 0.5);
-        color: var(--gold);
-        font-weight: 700;
-      }
-
-      .cards {
-        margin-top: 1.8rem;
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      }
-
-      .card {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 18px;
-        padding: 1rem;
-      }
-
-      .card h3 {
-        margin: 0 0 0.5rem;
-      }
-
-      .btn-row {
-        margin-top: 1.4rem;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-      }
-
-      button {
-        border: 0;
-        border-radius: 999px;
-        padding: 0.75rem 1.2rem;
-        font-size: 0.95rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      button:hover {
-        transform: translateY(-2px);
-      }
-
-      .primary {
-        background: linear-gradient(135deg, var(--pink), #ff7f51);
-        color: white;
-        box-shadow: 0 10px 30px rgba(255, 79, 139, 0.4);
-      }
-
-      .secondary {
-        background: rgba(255, 255, 255, 0.15);
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-      }
-
-      .status {
-        margin-top: 1rem;
-        text-align: center;
-        min-height: 1.3rem;
-        color: #ffd6e8;
-        font-weight: 600;
-      }
-
-      .performance-card {
-        margin-top: 2rem;
-        background: rgba(6, 2, 13, 0.72);
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        padding: 1.3rem;
-      }
-
-      .performance-card strong {
-        color: var(--gold);
-      }
-
-      .note {
-        margin-top: 0.7rem;
-        color: #ffe9f4;
-        opacity: 0.9;
-      }
-
-      .hidden-video {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      @media (max-width: 640px) {
-        .hero {
-          padding: 1.4rem 1rem;
+        width: 5px;
+        height: 24px;
+        background-color: #ff4572;
+        -webkit-animation-name: loading_icon;
+        animation-name: loading_icon;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation-duration: 0.7s;
+        animation-duration: 0.7s;
+        border-radius: 1px; }
+        .loading-icon.stm i{
+          background-color: #FFDB26;
         }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="glow one"></div>
-    <div class="glow two"></div>
+        .loading-icon i:nth-child(2) {
+          -webkit-animation-direction: alternate-reverse;
+          animation-direction: alternate-reverse; }
 
-    <main class="container">
-      <section class="hero">
-        <span class="pill">Live Celebration Event</span>
-        <h1>Love Lock-in</h1>
-        <p class="subtitle">
-          Celebrate connection, joy, and unforgettable performances. Start the vibe with our event soundtrack and enjoy Sulaiman's special performance in audio-only mode.
-        </p>
+      @-webkit-keyframes loading_icon {
+      0% {
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5); }
+      100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1); } }
 
-        <div class="cards">
-          <article class="card">
-            <h3>🎧 Background Music</h3>
-            <p>
-              Tap <strong>Play Theme</strong> to begin the "zyra.mp3" event atmosphere.
-            </p>
-          </article>
-          <article class="card">
-            <h3>🎤 Featured Performance</h3>
-            <p>
-              Use the custom card below to play <strong>Sulaiman</strong>'s performance as audio-only.
-            </p>
-          </article>
-        </div>
-
-        <div class="btn-row">
-          <button id="themeBtn" class="primary">▶ Play Theme</button>
-          <button id="muteBtn" class="secondary">⏸ Pause Theme</button>
-        </div>
-        <p class="status" id="statusText"></p>
-      </section>
-
-      <section class="performance-card">
-        <h2>Custom Performance Card</h2>
-        <p>
-          Now presenting: <strong>Sulaiman</strong>
-        </p>
-        <p class="note">
-          Video is hidden from users; only voice/audio is played.
-        </p>
-        <div class="btn-row" style="justify-content: flex-start">
-          <button id="performanceBtn" class="primary">▶ Play Sulaiman Performance</button>
-          <button id="stopPerformanceBtn" class="secondary">⏹ Stop Performance</button>
-        </div>
-      </section>
-    </main>
-
-    <audio id="bgMusic" src="zyra.mp3" loop preload="auto"></audio>
-
-    <video id="performanceVideo" class="hidden-video" preload="metadata">
-      <source src="sulaiman.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-
-    <script>
-      const statusText = document.getElementById("statusText");
-      const bgMusic = document.getElementById("bgMusic");
-      const performanceVideo = document.getElementById("performanceVideo");
-
-      document.getElementById("themeBtn").addEventListener("click", async () => {
-        try {
-          await bgMusic.play();
-          statusText.textContent = 'Theme music "zyra.mp3" is now playing.';
-        } catch (error) {
-          statusText.textContent = "Could not autoplay audio. Tap again to allow playback.";
-        }
-      });
-
-      document.getElementById("muteBtn").addEventListener("click", () => {
-        bgMusic.pause();
-        statusText.textContent = "Theme music paused.";
-      });
-
-      document.getElementById("performanceBtn").addEventListener("click", async () => {
-        try {
-          performanceVideo.currentTime = 0;
-          await performanceVideo.play();
-          statusText.textContent = "Sulaiman performance (audio-only) is playing.";
-        } catch (error) {
-          statusText.textContent = "Unable to start performance audio. Please try again.";
-        }
-      });
-
-      document.getElementById("stopPerformanceBtn").addEventListener("click", () => {
-        performanceVideo.pause();
-        performanceVideo.currentTime = 0;
-        statusText.textContent = "Performance stopped.";
-      });
-    </script>
-  </body>
-</html>
+      @keyframes loading_icon {
+      0% {
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5); }
+      100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1); } } </style> <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y5QLWEHNZ4&amp;cx=c&amp;gtm=4e62b1"></script><script defer="" src="https://www.gstatic.com/firebasejs/7.24.0/firebase-performance.js"></script><script defer="" src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script><script defer="" src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script><script id="SM_GLOBAL_I18N_SCRIPT">var SM_GOLBAL_LANG_KEYS = ["Train-11"]; 
+var SM_GOLBAL_LANG_EN = {"Train-11":"Train"};</script> <meta name="keywords" content="sing, sing !, sing!, karaoke, sing karaoke, singing app, karaoke app, kareoke, the voice, acapella, singing games, karaoke free, singing app, karoke, free karoke, sing!karaoke, American Idol, American Idol Auditions 2017, American Idol judges, Katy Perry, Kelly Clarkson, Ryan Seacrest"><meta name="description" content="The World's Leading Music &amp; Social Game Community"><meta name="renderer" content="webkit"><link rel="icon" href="/cdn/vue/agile/favicon.ico?a5a525ef6caa04fd5ad6"><link href="/cdn/vue/agile/css/vendors.19d45fe298a34766427a.css?a5a525ef6caa04fd5ad6" rel="stylesheet"><script src="/cdn/vue/js/h5-library/multi-user-mask/0.0.8/multi-user-mask.iife.min-20251231T035605043Z.js"></script><link rel="stylesheet" type="text/css" href="/cdn/vue/agile/css/790.02ce8920312e32aa69ae.css"><link rel="stylesheet" type="text/css" href="/cdn/vue/agile/css/90.ce68616bdf44c87e643a.css"><script src="https://www.googletagmanager.com/gtag/js?l=dataLayer" async=""></script></head> <body style="overflow: visible;"> <div data-v-89c87518="" class="app-wrapper user-select TA"><div data-v-1bdca95c="" data-v-89c87518="" class="title-bar g-flex g-flex-algin g-flex-justify-center"><i data-v-1bdca95c="" class="back"></i> <div data-v-1bdca95c="" class="title">DreamWork</div> <div data-v-1bdca95c="" class="right"><div data-v-89c87518="" data-v-1bdca95c="" class="index"></div></div></div> <div data-v-127205e6="" data-v-89c87518="" class="index view"><!----> <div data-v-3d7cd538="" data-v-127205e6="" class="indexEntry Company"><p data-v-3d7cd538="" class="font-Bold text">Company</p></div> <!----> <div data-v-3d7cd538="" data-v-127205e6="" class="indexEntry Reward"><p data-v-3d7cd538="" class="font-Bold text">Reward</p></div> <div data-v-3d7cd538="" data-v-127205e6="" class="indexEntry Ranking"><p data-v-3d7cd538="" class="font-Bold text">Ranking</p></div> <div data-v-3d7cd538="" data-v-127205e6="" class="indexEntry Store"><p data-v-3d7cd538="" class="font-Bold text">Store</p></div> <div data-v-3d7cd538="" data-v-127205e6="" class="indexEntry Partner"><p data-v-3d7cd538="" class="font-Bold text">Partner</p></div> <div data-v-3d7cd538="" data-v-127205e6="" class="indexEntry Help"><p data-v-3d7cd538="" class="font-Bold text">Help</p></div> <!----> <div data-v-127205e6="" class="companyInfo g-flex-between noCom"><img data-v-127205e6="" class=""> <div data-v-127205e6="" class="right"><p data-v-127205e6="" class="g-es name"></p> <!----></div></div> <!----> <!----> <!----> <div data-v-6f006e74="" data-v-127205e6="" class="partnerSuc"><div data-v-32c91d04="" data-v-6f006e74="" class="mask" style="display: none;"></div></div> <div data-v-473deed8="" data-v-127205e6="" class="guide"><div data-v-32c91d04="" data-v-473deed8="" class="mask" style="display: none;"><div data-v-473deed8="" class="model"></div> <div data-v-473deed8="" class="pop-content step1" style="display: none;"><div data-v-473deed8="" class="skip g-flex-center">SKIP</div> <div data-v-473deed8="" class="step1 bgNormal fixedCenter"><p data-v-473deed8="" class="hi">Hi~</p> <div data-v-473deed8="" class="text">Welcome to DreamWorks</div></div> <div data-v-473deed8="" class="step2 bgNormal fixedCenter" style="display: none;"><div data-v-473deed8="" class="company-box bgNormal entry-box"><div data-v-3d7cd538="" data-v-473deed8="" class="indexEntry Company"><p data-v-3d7cd538="" class="font-Bold text">Company</p></div></div> <div data-v-473deed8="" class="text">Every family is a company</div></div> <div data-v-473deed8="" class="step3 bgNormal fixedCenter" style="display: none;"><div data-v-473deed8="" class="agent-box bgNormal entry-box"><div data-v-3d7cd538="" data-v-473deed8="" class="indexEntry Manager"><p data-v-3d7cd538="" class="font-Bold text">Manager</p></div></div> <p data-v-473deed8="" class="text">You will be signed as a singer by other managers.</p></div> <div data-v-473deed8="" class="step4 fixedCenter" style="display: none;"><div data-v-473deed8="" class="add"></div> <div data-v-473deed8="" class="sign-singer g-flex-center signPop">Sign Singer</div> <div data-v-473deed8="" class="text g-flex-center bgNormal">
+          As a company member, you can use your business talents as an manager to sign other singers
+        </div></div> <div data-v-473deed8="" class="step5 fixedCenter" style="display: none;"><div data-v-473deed8="" class="g-flex-between assets-box"><div data-v-2f02cf9e="" data-v-473deed8="" class="numShow g-flex-between"><i data-v-2f02cf9e="" class="assets"></i> <span data-v-2f02cf9e="" class="num font-SemiBold short">
+      99
+    </span></div> <div data-v-2f02cf9e="" data-v-473deed8="" class="numShow g-flex-between"><i data-v-2f02cf9e="" class="worth"></i> <span data-v-2f02cf9e="" class="num font-SemiBold short">
+      100
+    </span></div> <div data-v-2f02cf9e="" data-v-473deed8="" class="numShow g-flex-between"><i data-v-2f02cf9e="" class="cash"></i> <span data-v-2f02cf9e="" class="num font-SemiBold short">
+      100
+    </span></div></div> <div data-v-473deed8="" class="g-flex-between desc-box"><div data-v-473deed8="" class="desc">Assets</div> <div data-v-473deed8="" class="desc">Worth</div> <div data-v-473deed8="" class="desc">Cash</div></div> <p data-v-473deed8="" class="text g-flex-center bgNormal">
+          You need to increase your three values to show your business ability and singer charm.
+        </p></div> <div data-v-473deed8="" class="step6 fixedCenter" style="display: none;"><div data-v-473deed8="" class="add"></div> <div data-v-473deed8="" class="sign-singer g-flex-center signPop">Sign Singer</div> <div data-v-473deed8="" class="text g-flex-center bgNormal">
+          From here you can go to sign your own singer
+        </div></div> <div data-v-473deed8="" class="step7 fixedCenter" style="display: none;"><div data-v-473deed8="" class="g-flex-between assets-box"><div data-v-2f02cf9e="" data-v-473deed8="" class="numShow g-flex-between"><i data-v-2f02cf9e="" class="cash"></i> <span data-v-2f02cf9e="" class="num font-SemiBold short">
+      100
+    </span></div></div> <div data-v-473deed8="" class="text bgNormal">Signing singer consumes your cash</div></div> <div data-v-473deed8="" class="step8 fixedCenter" style="display: none;"><div data-v-473deed8="" class="text bgNormal fixedCenter">Sign the singer you want</div> <div data-v-473deed8="" class="signPop bgNormal fixedCenter"><div data-v-473deed8="" class="gesture font-Bold g-flex-center">Sign contract</div></div></div> <div data-v-473deed8="" class="step9 fixedCenter" style="display: none;"><div data-v-473deed8="" class="g-flex-between assets-box"><div data-v-2f02cf9e="" data-v-473deed8="" class="numShow g-flex-between"><i data-v-2f02cf9e="" class="assets"></i> <span data-v-2f02cf9e="" class="num font-SemiBold short">
+      100
+    </span></div></div> <div data-v-473deed8="" class="text bgNormal g-flex-center">
+          After signing, the singer's worth will be included in your total assets
+        </div> <div data-v-473deed8="" class="signPop bgNormal fixedCenter"></div></div> <div data-v-473deed8="" class="step10 fixedCenter" style="display: none;"><div data-v-473deed8="" class="text bgNormal g-flex-center">
+          Very good! Now sign your first singer!
+        </div> <div data-v-473deed8="" class="signPop bgNormal fixedCenter"></div></div> <div data-v-473deed8="" class="step11 fixedCenter" style="display: none;"><div data-v-473deed8="" class="btn-box g-flex-between"><div data-v-473deed8="" class="cancel btn"><div data-v-473deed8="" class="what g-flex-center">What is this?</div> <img data-v-473deed8="" src="data:image/png;base64,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" alt=""> <p data-v-473deed8="">Cancel</p></div> <div data-v-473deed8="" class="show-btn btn"><div data-v-473deed8="" class="what g-flex-center">What is this?</div> <img data-v-473deed8="" src="data:image/png;base64,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" alt=""> <p data-v-473deed8="">Perform</p></div> <div data-v-473deed8="" class="pack btn"><div data-v-473deed8="" class="what g-flex-center">What is this?</div> <img data-v-473deed8="" src="data:image/png;base64,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" alt=""> <p data-v-473deed8="">Train</p></div></div> <div data-v-473deed8="" class="ava bgNormal"></div> <div data-v-473deed8="" class="name g-flex-center bgNormal font-SemiBold">UserName</div></div> <div data-v-473deed8="" class="ok g-flex-center">NEXT</div></div></div> <div data-v-529e36ec="" data-v-473deed8="" class="guideSingle"><div data-v-32c91d04="" data-v-529e36ec="" class="mask" style="display: none;"><div data-v-529e36ec="" class="model"></div> <div data-v-529e36ec="" class="pop-content pop-step1"><div data-v-529e36ec="" class="step1"><div data-v-529e36ec="" class="text">From here you can send singers to perform.</div> <div data-v-529e36ec="" class="img bgNormal"></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----></div> <div data-v-529e36ec="" class="ok g-flex-center font-Bold">NEXT</div></div></div></div> <div data-v-37510563="" data-v-127205e6="" class="endPopTips"><div data-v-32c91d04="" data-v-37510563="" class="mask" style="display: none;"><div data-v-37510563="" class="pop-content bounce-enter-active"><div data-v-37510563="" class="endImg"><p data-v-37510563="" class="hi">Hi~</p> <div data-v-37510563="" class="update font-Bold">DreamWork Update</div></div> <p data-v-37510563="" class="text">
+        The first season will end on 27th Sep. The new season will start on 28th Sep. and the event will restart. There will be a generous gift at the end
+      </p> <div data-v-37510563="" class="btn g-flex-center">
+        Learn more
+      </div></div> <div data-v-37510563="" class="close"></div></div></div> <div data-v-0ff9c394="" data-v-127205e6="" class="seasonEndTips"><div data-v-32c91d04="" data-v-0ff9c394="" class="mask" style="display: none;"><!----> <div data-v-0ff9c394="" class="close"></div></div></div></div> <div data-v-700fcf2b="" data-v-89c87518="" class="loading" style="display: none;"></div> <div data-v-54e87ae5="" data-v-89c87518="" class="rulePop"><div data-v-32c91d04="" data-v-54e87ae5="" class="mask" style="display: none;"><div data-v-54e87ae5="" class="pop-content"><i data-v-54e87ae5="" class="close"></i> <p data-v-54e87ae5="" class="title font-Bold">Introduction</p> <div data-v-54e87ae5="" class="content"><!----> <div data-v-54e87ae5="" class="item"><span data-v-54e87ae5="" class="title font-Bold">The company's total assets:</span> <p data-v-54e87ae5="" class="desc">It is composed of the sum of the cash of all the managers of the company, the total worth of the singers under it, and the worth of all the managers who have not signed the contract.</p></div><div data-v-54e87ae5="" class="item"><span data-v-54e87ae5="" class="title font-Bold">Company managers:</span> <p data-v-54e87ae5="" class="desc">Total number of company managers</p></div><div data-v-54e87ae5="" class="item"><span data-v-54e87ae5="" class="title font-Bold">The company's singers:</span> <p data-v-54e87ae5="" class="desc">The sum of singers owned by all managers of the company</p></div><div data-v-54e87ae5="" class="item"><span data-v-54e87ae5="" class="title font-Bold">Company bonus:</span> <p data-v-54e87ae5="" class="desc">The company bonus can increase the performance of singers of all the managers in the company, the income of the cooperation of the managers, and reduce the compensation amount of the managers when the singer failsThe company bonus can increase the income brought by the singer's performance, the income of the manager's cooperation, and reduce the compensation when the performance fails.Update every day at 0 o'clock.</p></div><div data-v-54e87ae5="" class="item"><span data-v-54e87ae5="" class="title font-Bold">Company bonus growth:</span> <table data-v-54e87ae5=""><tr data-v-54e87ae5=""><th data-v-54e87ae5="">Company bonus</th> <th data-v-54e87ae5="">Company's assets</th> <th data-v-54e87ae5="">Company's singers</th></tr> <tr data-v-54e87ae5=""><td data-v-54e87ae5="">0.1</td> <td data-v-54e87ae5="">200000</td> <td data-v-54e87ae5="">50</td></tr> <tr data-v-54e87ae5=""><td data-v-54e87ae5="">0.2</td> <td data-v-54e87ae5="">1000000</td> <td data-v-54e87ae5="">200</td></tr> <tr data-v-54e87ae5=""><td data-v-54e87ae5="">0.3</td> <td data-v-54e87ae5="">5000000</td> <td data-v-54e87ae5="">500</td></tr> <tr data-v-54e87ae5=""><td data-v-54e87ae5="">0.4</td> <td data-v-54e87ae5="">20000000</td> <td data-v-54e87ae5="">1000</td></tr> <tr data-v-54e87ae5=""><td data-v-54e87ae5="">0.5</td> <td data-v-54e87ae5="">60000000</td> <td data-v-54e87ae5="">2000</td></tr></table></div></div></div></div></div> <div data-v-81d5ca96="" data-v-89c87518="" class="endPop"><div data-v-32c91d04="" data-v-81d5ca96="" class="mask" style="display: none;"><div data-v-81d5ca96="" class="pop-content bounce-enter-active">
+      This season is over, enter DreamWork from the event entrance to experience the new season!
+      <div data-v-81d5ca96="" class="close g-flex-center">OK</div></div></div></div></div> <div class="loading-icon hide"><div><i></i><i></i><i></i></div></div> <script> var baseData = {
+        token_user_id: "0",
+        userId: "0",
+        token_user_sid: "0",
+        language: "TA",
+        app_type: "sm",
+        real_app_type:"sm",
+        user_region:"",
+        promotion: {"id":"37838","type":1069,"sub_type":0,"name":"Crazy Monster","begin_time":"2023-06-16 00:00:00","end_time":"2033-06-16 00:00:00","slogan":"Crazy Monster","introduction":"","share_title":"","share_desc":"","origin_share_title":"","origin_share_desc":"","share_link":"","share_cover_relative":"","share_cover":"","is_share_copy":false,"just_song":false,"cover_image":"","is_end":false,"song_ids":[],"button_color":"#ff4572","button_font_color":"#ffffff","locale":"","region":[""],"locale_avoid":[""],"app_name":"","rule_url":"","header_title":"","user_id":"0","video_url":"","titles":[],"opening_time":null,"voting_begin_time":null,"voting_end_time":null,"timezone":"UTC","layout":{"templateType":1,"languageList":["in","ar","ms","th","ur-PK","it","zh-TW","bn","es","ja","ko","vi","de","fr","pt","ru","tr"],"theme":{"content":"blue","usebg":1,"image":"","position":"repeat-y","htmlcolor":"","rewardsTheme":"blue"},"rank":[{"rule":{"content":"","link":"","popContent":""},"image":"","name":"","contestType":"","listType":"","listCycle":"","customDay":"","starStage":"","starStageMax":"","mixedRule":{"stars":0,"comment":0,"share":0,"like":0,"play":0,"fans":0,"online":0,"sendUser":0,"minLiveTime":0,"maxLiveTime":0,"mediaType":"","recordingType":[]},"justGiftWeek":{"isShowIt":false,"weekList":[]},"topNum":"","speedLimit":0,"anchorType":"all","anchorLevel":false}],"common":{"is_gold":0,"is_verified":0,"is_family":0,"is_king":0,"is_imagelink_desc":0,"is_limited_user":0,"is_user_diamond":0,"is_diamond":0,"is_double":0,"is_subtype":0,"is_certified":0,"is_only_certified":0,"binding_region":0,"limit_gift_info":[],"rankIcon":"","limit_family_ids":"","time_line_first":[],"ktv_level_min":0,"ktv_level_max":0,"from_uid_same_locale":0,"is_only_guild":0,"mix_set_data":{"stars":0,"comment":0,"share":0,"like":0,"play":0,"fans":0,"online":0,"sendUser":0,"minLiveTime":0,"maxLiveTime":0,"mediaType":"","recordingType":[]},"gold_doubles_num":"","time_gold_double":[],"gold_doubles_show":"","is_latin_user":0,"register_in_48h":0,"ip_limit":0,"to_uid_same_locale":0,"change_locale_limit":0,"is_limit_user_level":0,"user_level_arr":[],"is_limit_to_user":0},"recommend":{"type":2,"recommend":[{"id":"","tag":"","content":"","smType":1}]},"comment":{"showSequence":1,"top":1},"imageLink":[{"image":"","hit":0,"hit_position":0,"hit_color":"","tag":"","tag_position":0,"url":"","url_type":0}],"fixBtn":{"list":[{"image":"","url":"","positionVer":"","positionLevel":"","vertical":"","level":"","socialLink":"","order":1}]},"turntable":{"turntableId":null,"superTurntableId":null,"title":null,"content":null,"isShowIt":false},"whiteBlack":{"list":[]},"bigCard":{"hideBigCard":false},"shareTurnTableConfig":{"shareTimes":0,"shareGetCount":0,"inviteTimes":0,"inviteGetCount":0,"visitTimes":0,"visitGetCount":0},"year_end_main_promotion":{"main_promotion_id":""},"sort":[{"name":"banner"},{"name":"status"},{"name":"image"},{"name":"rule"},{"name":"rank"},{"name":"footer"}],"banner":{"image":"","video":""},"bannerTime":{"bt":{"d":"16th","m":"Jun."},"et":{"d":"16th","m":"Jun."},"content":"","color":"#FFF","fontSize":42,"case":false,"bottom":"0","left":"0","position":"btm-center-banner","style":{"bottom":"7px","left":"50%","transform":"translateX(-50%)"},"fontShadow":"","fontStroke":"","textBgModel":"","use":false},"image":[[]],"ruleAwards":{"content":"","link":"","popContent":"","usebg":0,"imageList":[[]]},"rewardsTpl":{"imageList":[{"image":""},[]],"content":"","link":"","diyImgVt":"bottom","diyImgLevel":"left","diyRewardsVt":"bottom","rewardsTitle":"","ruleTitle":"","subtitle":""},"ruleAwardsNew":{"imageList":[[]],"content":"","link":"","open":false},"rule":{"title":"","content":"","link":"","popContent":"","titleImage":""},"textImgMix":{"list":[{"text":"","title":"","other":"","imageList":[{"image":""}]}],"title":"","titleSize":"","contentSize":"","titleAlign":"center","secTitleSize":""},"video":[{"video":"","image":"","title":""}],"status":{"content_before":"The event is about to begin.","content_end":"The event has come to an end."},"footer":{"content":"","link":"","action":""},"gift":{"rules":"","topic_color":"","gift_value":false,"gift_name":false},"downloadOrigin":{"pid":"","c":1},"checkIn":{"gift_list":{"1":{"id":"","num":"1"},"2":{"id":"","num":"1"},"3":{"id":"","num":"1"},"4":{"id":"","num":"1"},"5":{"id":"","num":"1"},"6":{"id":"","num":"1"},"7":{"id":"","num":"1"},"8":{"id":"","num":"1"},"9":{"id":"","num":"1"},"10":{"id":"","num":"1"}},"check_in_rule":""},"topicDesc":{"topic_desc":"","topic_color":"","topic_align":"left"},"event":{"smEvent":[[]]},"superStarRules":[{"video":"","poster":"","show":1,"image":"","title":""}],"superStarImglang":[[],[],[],[],[],[],[],[],[],[],[],[]],"superStar":{"audition":"","quarter":"","semi":"","final":"","starry_live":"","music_url":"","gift_vote_id":0,"live_user_id":0,"live_room_id":0,"stage":[[],[],[],[],[],[],[],[],[],[]],"text":""},"sidBid":[{"sid":"","date":"","amount":""}],"specialTimeLine":{"list":[{"avatar":"","date":"","image":"","title":""}]},"songList":[],"entryFee":{"text":"","coins":"","is_entry_fee":0},"starWarmUp":{"list":[{"avatar":"","top_image":"","btm_image":"","url":""}]},"ludoRecommend":[{"title":"","list":[]}],"task":{"checkIn":{"continuous":0},"clickToSing":{"post":0},"like":{"getLike":0},"starGiftPackId":0,"arrangement":"1","imageList":[{"image":"","dis":""},{"image":"","dis":""},{"image":"","dis":""},{"image":"","dis":""}]},"notice":{"title":"","content":"","link":"","row":3,"borderImage":"","titleImage":""},"crazyMonsterConfig":{"notice":{"open":true,"key":"_What's new:#event_A brand-new Personal Battle Ranking Challenge is here! Compete against opponents to climb the ranks and earn more Iron Ore. Use your Iron Ore in the shop to redeem a wealth of Rewards!#event_The Adventure Mode stage limit has been increased to 400","time":["2026-02-10 00:00:00","2026-02-28 00:00:00"],"colorIndex":""},"iconList":[{"id":2,"name":"event_Dragon Trial","key":"","open":false,"icon":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/6fb7352567fe97ce457c3de22869ceeb.png","time":[],"url":"https:\/\/m.starmakerstudios.com\/a-vue3\/spa-crazy-monster-luck\/index?promotion_id=%v&showBar=0&showNavigation=false&new=true&heightPercent=80&corners=0.01","ids":"79795"},{"id":3,"name":"event_Sacred Temple","key":"1","open":true,"icon":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/20b4650c7606b0ef894b0cfe50afa24f.png","time":[],"url":"https:\/\/m.starmakerstudios.com\/a-vue3\/spa-crazy-monstor-spring\/index?promotion_id=%v&shshowNavigation=false&new=true&heightPercent=70&corners=0.01","ids":"85430"},{"id":4,"name":"_Dragon Egg Hunter","key":"","open":false,"icon":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/1882fc53ead7884e60cabec8acda63d7.png","time":[],"url":"https:\/\/m.starmakerstudios.com\/a-vue3\/spa-crazy-monster-DragonEgg\/index?promotion_id=%v&showBar=0&showNavigation=false&new=true&heightPercent=70&corners=0.01","ids":"77824"},{"id":5,"name":"event_\"Crazy Monster\" Reward Survey","key":"2","open":false,"icon":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/5265ef5abeafdba5d16faf74a0ade133.png","time":[],"url":"https:\/\/m.starmakerstudios.com\/a-vue3\/crazy-monstor-questionnaire?promotion_id=%v&showBar=0&showNavigation=false","ids":"83911"},{"id":6,"name":"_Miracle Wheel","key":"1","open":false,"icon":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/2ece8f05227e3355746e64ab636f5389.png","time":[],"url":"https:\/\/m.starmakerstudios.com\/a-vue3\/spa-agc2025-monster-game\/index?promotion_id=%v&showBar=0&showNavigation=false&heightPercent=80&isHalfScreenWebPage=true&corners=10&bgTransparent=true","ids":"83643"}],"popupConfig":[{"ids":"85430","name":"_Miracle Wheel","key":"turnable","open":true,"image":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/e550928656e96d6f82aa639491274ee3.png","icon":"","time":[],"url":"https:\/\/m.starmakerstudios.com\/a-vue3\/spa-crazy-monstor-spring\/index?promotion_id=%v&shshowNavigation=false&new=true&heightPercent=70&corners=0.01","image_in":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/5eea01f2687e8a644e8d375a86d39bfd.png","image_ar":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/c1205e0791ec88601d78a4df001b9982.png","image_ms":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/df08b2caf493cbdaac2f7c69deaf0fed.png","image_th":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/1063579198f2bb3db6f80c745b8e0a6e.png","image_ur-PK":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/eea1f3bf768d7457e88f9ef945f2d5ef.png","image_it":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/d33bb7698d07d4e83d4d79d1402744d5.png","image_zh-TW":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/6abda68f49be0421ebdbec5dc8e7da39.png","image_bn":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/d3fd5c3760962f0c9a4ad881c4905cfa.png","image_es":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/6f556f24700c307b17148bc174498ad7.png","image_ja":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/6b7757ae7aac2b7aa5f6555273bd8d85.png","image_ko":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/f205fac84e80c4d2393b7bb8e4db0829.png","image_vi":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/f5ad46d8d89c586409d5d8cf50707b8f.png","image_de":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/c0bb4b2bee50c427a3226e751ba6ded1.png","image_fr":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/7495d2896d9d00fe1b517de30a73833a.png","image_pt":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/e4b485ae1e50872b20f064f445200dab.png","image_ru":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/3dd04b47068e1ea5700be50745ed7301.png","image_tr":"https:\/\/improxy.starmakerstudios.com\/tools\/im\/0\/production\/promotion\/cover\/dda737a8f15ff7f381a9d0700765357f.png"}]}},"gift_ids":[],"gift_times":1,"image_category_id":0,"just_gift":false,"promotion_url":"https:\/\/m.starmakerstudios.com\/a-vue3\/spa-crazy-monster?promotion_id=37838&showBar=0&showNavigation=false&heightPercent=80&corners=0.01","allow_join":true,"hashtag_id":"0","task_system":null,"promotion_type":0,"is_top":false,"template":null,"create_source":0,"recording_count":283678}      }
+      if(baseData.app_type == 'jal'){
+        document.querySelector('.loading-icon').classList.add('stm');
+      } </script> <script type="text/javascript">  </script> <script defer="" src="/cdn/vue/js/h5-library/vue/2.6.14/vue.min.js"></script><script defer="" src="/cdn/vue/js/h5-library/vuex/3.6.2/vuex.min.js"></script><script defer="" src="/cdn/vue/js/h5-library/vue-router/3.5.2/vue-router.min.js"></script><script defer="" src="/cdn/vue/agile/js/vendors/vendors.19d45fe298a34766427a.js?a5a525ef6caa04fd5ad6"></script><script defer="" src="/cdn/vue/agile/js/spa-dreamWorks/spa-dreamWorks.7027a95c48c5b7146110.js?a5a525ef6caa04fd5ad6"></script>  <!----></body></html>
